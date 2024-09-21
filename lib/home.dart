@@ -68,7 +68,7 @@ class _TruckBoxCalculatorState extends State<TruckBoxCalculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Truck Box Calculator'),
+        title: Text('Truck Voulme Calculator'),
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
       ),
