@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 
 class TruckBoxCalculator extends StatefulWidget {
+  const TruckBoxCalculator({super.key});
+
   @override
   _TruckBoxCalculatorState createState() => _TruckBoxCalculatorState();
 }
@@ -68,13 +70,19 @@ class _TruckBoxCalculatorState extends State<TruckBoxCalculator> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Truck Voulme Calculator'),
+        title: const Text(
+          'Truck Voulme Calculator',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            fontSize: 30,
+          ),
+        ),
         centerTitle: true,
         backgroundColor: Colors.blueAccent,
       ),
       body: SingleChildScrollView(
         child: Padding(
-          padding: EdgeInsets.all(16.0),
+          padding: const EdgeInsets.all(16.0),
           child: Column(
             children: [
               constTextField(
@@ -109,16 +117,16 @@ class _TruckBoxCalculatorState extends State<TruckBoxCalculator> {
                 truckController: _boxWeightController,
                 labletext: 'Box Height (kg)',
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               ElevatedButton(
                 onPressed: _calculate,
-                child: Text('Calculate'),
+                child: const Text('Calculate'),
               ),
-              SizedBox(height: 20),
+              const SizedBox(height: 20),
               Card(
                 child: Text(
                   'Number of Boxes: ${_result.toStringAsFixed(0)}',
-                  style: TextStyle(fontSize: 24),
+                  style: const TextStyle(fontSize: 24),
                 ),
               ),
             ],
@@ -142,7 +150,7 @@ class constTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(),
+      decoration: const BoxDecoration(),
       child: TextField(
         controller: _truckController,
         keyboardType: TextInputType.number,
